@@ -4,41 +4,6 @@ export default {
     comics: Array,
   },
 
-  data() {
-    return {
-      products: [
-        {
-          productImg: "buy-comics-digital-comics.png",
-          label: "Digital Comics",
-          link: "#",
-        },
-
-        {
-          productImg: "buy-comics-merchandise.png",
-          label: "DS Merchandise",
-          link: "#",
-        },
-        {
-          productImg: "buy-comics-subscriptions.png",
-          label: "Subscriptions",
-          link: "#",
-        },
-
-        {
-          productImg: "buy-comics-shop-locator.png",
-          label: "Comic Shop Locator",
-          link: "#",
-        },
-
-        {
-          productImg: "buy-dc-power-visa.svg",
-          label: "Dc Power Visa",
-          link: "#",
-        },
-      ],
-    };
-  },
-
   methods: {
     getImageUrl(name) {
       return new URL(`../assets/img/${name}`, import.meta.url).href;
@@ -64,19 +29,6 @@ export default {
           </ul>
         </div>
         {{ title }}
-      </section>
-
-      <section class="section2">
-        <div
-          v-for="(product, index) in products"
-          :key="product.label"
-          class="main-main"
-        >
-          <div class="comics">
-            <img :src="getImageUrl(product.productImg)" alt="Image" />
-            <p>{{ product.label }}</p>
-          </div>
-        </div>
       </section>
     </div>
   </main>
@@ -116,32 +68,6 @@ main {
     text-transform: uppercase;
     color: white;
     padding-top: 0.5rem;
-  }
-}
-
-.section2 {
-  background-color: hsl(209deg 100% 49%);
-  width: 100%;
-  @include flex-center("both");
-
-  .main-main {
-    @include flex-center("both");
-    color: white;
-
-    .comics {
-      @include flex-center("both");
-      padding: 20px 20px;
-
-      img {
-        max-width: 100%;
-        width: 15%;
-      }
-
-      p {
-        font-size: 0.9rem;
-        padding-left: 15px;
-      }
-    }
   }
 }
 </style>

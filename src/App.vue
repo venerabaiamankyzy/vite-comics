@@ -3,9 +3,10 @@ import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import AppMain from "./components/AppMain.vue";
 import AppJumbotron from "./components/AppJumbotron.vue";
+import AppMainSection from "./components/AppMainSection.vue";
 
 export default {
-  components: { AppHeader, AppFooter, AppMain, AppJumbotron },
+  components: { AppHeader, AppFooter, AppMain, AppJumbotron, AppMainSection },
 
   data() {
     return {
@@ -147,6 +148,37 @@ export default {
           type: "graphic novel",
         },
       ],
+
+      products: [
+        {
+          productImg: "buy-comics-digital-comics.png",
+          label: "Digital Comics",
+          link: "#",
+        },
+
+        {
+          productImg: "buy-comics-merchandise.png",
+          label: "DS Merchandise",
+          link: "#",
+        },
+        {
+          productImg: "buy-comics-subscriptions.png",
+          label: "Subscriptions",
+          link: "#",
+        },
+
+        {
+          productImg: "buy-comics-shop-locator.png",
+          label: "Comic Shop Locator",
+          link: "#",
+        },
+
+        {
+          productImg: "buy-dc-power-visa.svg",
+          label: "Dc Power Visa",
+          link: "#",
+        },
+      ],
     };
   },
 };
@@ -157,6 +189,7 @@ export default {
   <main>
     <AppJumbotron />
     <AppMain :comics="comics" />
+    <AppMainSection :products="products" />
   </main>
   <AppFooter />
 </template>
