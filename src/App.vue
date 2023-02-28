@@ -24,5 +24,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "./assets/scss/general.scss";
+@use "./assets/scss/general.scss" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
 </style>
