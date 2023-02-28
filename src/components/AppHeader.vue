@@ -1,9 +1,7 @@
 <script>
 export default {
-  data() {
-    return {
-      title: "Header",
-    };
+  props: {
+    headerLinks: Array,
   },
 };
 </script>
@@ -13,16 +11,9 @@ export default {
     <div class="container">
       <img src="../assets/img/dc-logo.png" alt="Logo" />
       <ul>
-        <li><a href="#">CHARACTERS</a></li>
-        <li><a href="#">COMICS</a></li>
-        <li><a href="#">MOVIES</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">GAMES</a></li>
-        <li><a href="#">COLLECTIBLES</a></li>
-        <li><a href="#">VIDEOS</a></li>
-        <li><a href="#">FANS</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">SHOP</a></li>
+        <li v-for="(link, index) in headerLinks" :key="link.label">
+          <a :href="link.url">{{ link.label }}</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -46,19 +37,17 @@ header {
     text-decoration: none;
     color: #333333;
     font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   img {
     width: 40px;
   }
 
-  background-color: white;
   div {
     @include flex-between();
-
     padding: 10px 30px;
-
-    background-color: red;
   }
 }
 </style>
