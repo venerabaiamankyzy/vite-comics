@@ -2,9 +2,10 @@
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import AppMain from "./components/AppMain.vue";
+import AppJumbotron from "./components/AppJumbotron.vue";
 
 export default {
-  components: { AppHeader, AppFooter, AppMain },
+  components: { AppHeader, AppFooter, AppMain, AppJumbotron },
 
   data() {
     return {
@@ -154,6 +155,7 @@ export default {
 <template>
   <AppHeader :headerLinks="headerLinks" />
   <main>
+    <AppJumbotron />
     <AppMain :comics="comics" />
   </main>
   <AppFooter />
